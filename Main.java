@@ -12,7 +12,7 @@ public class Main {
 
         String a ;
         do {
-            System.out.print("Enter a string: ");
+            System.out.print("Enter an SQL statement : ");
             a= sc.nextLine();
         
          // reads string
