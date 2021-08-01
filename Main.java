@@ -134,19 +134,35 @@ public class Main {
                 e.AfficherValeur();
             }
 
-        }
-        ///////////////////// delete /////////////////////
+        } 
+                ///////////// delete /////////////////////
         else if (words[0].equals("delete") && words[1].equals("from")&& words[2].equals("Person") && words[3].equals("where")
-                && words[4].equals("id") && words[5].equals("=")) { 
+                 && words[5].equals("=")) { 
                     Iterator i = p.iterator();
                     Person str ;
                     while (i.hasNext()) {
                        str = (Person) i.next();
+                       if(words[4].equals("id")){
                        if (str.getId().equals(words[6])) {
                           i.remove();
-                          System.out.println("\nThe person ' "+str.getName()+" ' is removed");
+                          System.out.println("\nThe person with the id ' "+str.getId()+" ' is removed");
                           break;
                        }
+                        }
+                        if(words[4].equals("name")){
+                            if (str.getName().equals(words[6])) {
+                               i.remove();
+                               System.out.println("\nThe person with the name ' "+str.getName()+" ' is removed");
+                               break;
+                            }
+                             }
+                             if(words[4].equals("age")){
+                                if (str.getAge().equals(words[6])) {
+                                   i.remove();
+                                   System.out.println("\nThe person with the age : ' "+str.getAge()+" ' is removed");
+                                   break;
+                                }
+                                 }
                     }
             for (Person e : p) {
                 e.AfficherValeur();
